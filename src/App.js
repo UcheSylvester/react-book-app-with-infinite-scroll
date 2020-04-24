@@ -1,6 +1,16 @@
 import React, { useState, useRef, useCallback } from "react";
 import "./App.css";
 import UseBookSearch from "./hooks/use-books-search.hook";
+import BookCard from "./book-card/book-card.component";
+
+export const shuffleString = (string) => {
+  var arr = string.split(""); // Convert String to array
+
+  arr.sort(() => 0.5 - Math.random());
+
+  string = arr.join(""); // Convert Array to string
+  return string; // Return shuffled string
+};
 
 function App() {
   const [query, setQuery] = useState("");
@@ -49,14 +59,16 @@ function App() {
       />
 
       <div className="books">
-        {books.map((book, index) => {
-          if (books.length === index + 1)
+        {books.map((book, idx) => {
+          if (books.length === idx + 1)
             return (
-              <div key={book} ref={lastBookElementRef}>
-                {book}{" "}
-              </div>
+              <BookCard
+                key={shuffleString(book.title)}
+                ref={lastBookElementRef}
+                {...book}
+              />
             );
-          else return <div key={book}>{book}</div>;
+          else return <BookCard key={shuffleString(book.title)} {...book} />;
         })}
       </div>
 

@@ -35,8 +35,14 @@ const UseBookSearch = ({ query, pageNumber }) => {
         setBooks((previousBooks) => {
           const newBooks = [
             ...previousBooks,
-            ...docs.map((book) => book.title),
+            ...docs.map(({ title, author_name, publish_date }) => ({
+              title,
+              author_name,
+              publish_date,
+            })),
           ];
+
+          console.log({ newBooks });
 
           const set = [...new Set(newBooks)];
 

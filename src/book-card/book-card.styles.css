@@ -1,0 +1,20 @@
+.book-card {
+  width: 250px;
+  min-height: 180px;
+  margin: 1em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.name {
+  margin: 7px;
+}

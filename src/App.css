@@ -4,7 +4,6 @@
   max-width: 850px;
   width: 100%;
   align-items: center;
-  padding: 0 2em;
   margin: 2em auto;
 }
 
@@ -13,4 +12,13 @@
   padding: 10px;
   border-radius: 5px;
   border: 1px solid grey;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2em;
+
+  align-items: center;
 }
